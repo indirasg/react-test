@@ -28,7 +28,7 @@ steps:
     ls
     mkdir -p .ssh
     touch .ssh/priv_key
-    echo $(AWS_SSH_PRIVATE_KEY_TEST) >> .ssh/priv_key
-    cat .ssh/priv_key
+    echo $(AWS_SSH_PRIVATE_KEY) >> .ssh/priv_key
     scp -r -i .ssh/priv_key build/* bitnami@18.142.150.173:/opt/bitnami/nginx/html
+    rm -rf .ssh
   displayName: 'Copy the build folder to AWS LightSail'
