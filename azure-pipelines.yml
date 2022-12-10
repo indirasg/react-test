@@ -41,8 +41,3 @@ steps:
     OverWrite: true
     Advanced: |
       -i $(Agent.TempDirectory)/LightsailDefaultKey-ap-southeast-1.pem 
-
-- script: |
-    ls
-    scp -r build/* bitnami@18.142.150.173:/opt/bitnami/nginx/html
-  displayName: 'Copy the build folder to AWS LightSail'
