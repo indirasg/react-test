@@ -10,6 +10,13 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+
+- task: InstallSSHKey@0
+  displayName: 'Install an SSH key'
+  inputs:
+    knownHostsEntry: 18.142.150.173
+    sshKeySecureFile: 'LightsailDefaultKey-ap-southeast-1.pem'
+
 - task: UseNode@1
   inputs:
     version: '16.x'
@@ -24,11 +31,6 @@ steps:
   displayName: 'npm install and build'
   
 - script: |
-    pwd
     ls
-    mkdir -p .ssh
-    touch .ssh/priv_key
-    echo $(AWS_SSH_PRIVATE_KEY) >> .ssh/priv_key
-    scp -r -i .ssh/priv_key build/* bitnami@18.142.150.173:/opt/bitnami/nginx/html
-    rm -rf .ssh
+    scp -r build/* bitnami@18.142.150.173:/opt/bitnami/nginx/html
   displayName: 'Copy the build folder to AWS LightSail'
