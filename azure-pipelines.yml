@@ -19,15 +19,8 @@ steps:
     npm install --global yarn
     yarn
     yarn build
+    pwd
   displayName: 'npm install and build'
-
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.x'
-  
-- script: |
-    curl -sL "https://aka.ms/InstallAzureCLIDeb" | sudo bash
-  displayName: 'Install Azure CLI and AWS CLI'
   
 - script: |
     az login --service-principal -u $(servicePrincipalId) -p $(servicePrincipalKey) --tenant $(tenantId)
