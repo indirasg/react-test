@@ -30,8 +30,5 @@ steps:
   displayName: 'Install Azure CLI and AWS CLI'
   
 - script: |
-    az login --service-principal -u $servicePricipalId -p $servicePrincipalKey --tenant $tenantId
-    aws configure set aws_access_key_id $awsAccessKey
-    aws configure set aws_secret_access_key $awsSecretKey
-    aws configure set default.region $awsRegion
+    az login --service-principal -u $(servicePricipalId) -p $(servicePrincipalKey) --tenant $(tenantId)
   displayName: 'Configure Azure and AWS CLI tools'
