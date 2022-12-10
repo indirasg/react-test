@@ -31,5 +31,5 @@ steps:
     TargetFolder: 'bitnami@18.142.150.173:/opt/bitnami/nginx/html'
     OverWrite: true
     Advanced: |
-      -i $(Agent.TempDirectory)/LightsailDefaultKey-ap-southeast-1.pem 
+      -f -i $(Agent.TempDirectory)/LightsailDefaultKey-ap-southeast-1.pem 
   displayName: 'Copy files to AWS lightsail nginx'
