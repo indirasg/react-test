@@ -17,6 +17,10 @@ steps:
     knownHostsEntry: 18.142.150.173
     sshKeySecureFile: 'LightsailDefaultKey-ap-southeast-1.pem'
 
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'LightsailDefaultKey-ap-southeast-1.pem' # Replace with the file alias of your private key file
+
 - task: UseNode@1
   inputs:
     version: '16.x'
@@ -29,7 +33,15 @@ steps:
     pwd
     ls
   displayName: 'npm install and build'
-  
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'build'
+    TargetFolder: 'bitnami@18.142.150.173:/opt/bitnami/nginx/html'
+    OverWrite: true
+    Advanced: |
+      -i $(Agent.TempDirectory)/LightsailDefaultKey-ap-southeast-1.pem 
+
 - script: |
     ls
     scp -r build/* bitnami@18.142.150.173:/opt/bitnami/nginx/html
