@@ -39,7 +39,7 @@ steps:
 - task: CopyFilesOverSSH@0
   displayName: 'Securely copy files to the remote machine'
   inputs:
-    sshEndpoint: 'bitnami@18.142.150.173'
+    sshEndpoint: 'aws lightsail nginx connection'
     sourceFolder: 'build'
     targetFolder: '/opt/bitnami/nginx/html'
     cleanTargetFolder: true
