@@ -10,10 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: DownloadSecureFile@1
-  inputs:
-    secureFile: 'LightsailDefaultKey-ap-southeast-1.pem' # Replace with the file alias of your private key file
-
 - task: UseNode@1
   inputs:
     version: '16.x'
