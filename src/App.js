@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Welcome <code>to</code>Appmart 
         </p>
         <a
           className="App-link"
@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Welcome to AppMart!
+          Landingpage to AppMart!
         </a>
       </header>
     </div>
