@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Welcome to AppMart!!!
+          Welcome to AppMart!
         </a>
       </header>
     </div>
