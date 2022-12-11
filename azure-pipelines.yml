@@ -26,7 +26,7 @@ steps:
   displayName: 'npm install and build'
 
 - task: CopyFilesOverSSH@0
-  displayName: 'Securely copy files to the remote machine'
+  displayName: 'Securely copy geneated build files to the lightsail instance'
   inputs:
     sshEndpoint: 'aws-lightsail-nginx-connection'
     sourceFolder: 'build'
