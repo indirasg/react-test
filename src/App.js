@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Welcome <code>to</code>Appmart 
+          Welcome <code>to</code> Appmart 
         </p>
         <a
           className="App-link"
@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Landingpage to AppMart!
+        AppMart!
         </a>
       </header>
     </div>
